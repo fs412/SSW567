@@ -5,7 +5,7 @@ python:
 # command to run tests
 script:
  - python -m unittest HW02TestTriangle
- - coverage run -m unittest HW05FS_test
+ - coverage run -m unittest discover
 install:
  - pip install coverage
  
