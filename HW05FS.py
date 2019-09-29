@@ -13,17 +13,16 @@ def main():
         return
 
     if (a is str):
-        print("Please enter a valid numerical digit rounded to the nearest integer.")
+        return("Please enter a valid numerical digit rounded to the nearest integer.")
 
     if (b is str):
-        print("Please enter a valid numerical digit rounded to the nearest integer.")
+        return("Please enter a valid numerical digit rounded to the nearest integer.")
 
     if (c is str):
-        print("Please enter a valid numerical digit rounded to the nearest integer.")
+        return("Please enter a valid numerical digit rounded to the nearest integer.")
 
     if a <= 0 or b <= 0 or c <= 0:
-        print("A triangle's side may not be less than or equal to 0. Please try again.")
-        return
+        return("A triangle's side may not be less than or equal to 0. Please try again.")
 
     triangle = classify_triangle(a, b, c)
     print(triangle)
