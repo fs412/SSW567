@@ -12,27 +12,20 @@ def main():
         print("Please enter a valid numerical digit rounded to the nearest integer.")
         return
 
-    if (a is str):
-        return("Please enter a valid numerical digit rounded to the nearest integer.")
-
-    if (b is str):
-        return("Please enter a valid numerical digit rounded to the nearest integer.")
-
-    if (c is str):
-        return("Please enter a valid numerical digit rounded to the nearest integer.")
-
-    if a <= 0 or b <= 0 or c <= 0:
-        return("A triangle's side may not be less than or equal to 0. Please try again.")
-
     triangle = classify_triangle(a, b, c)
     print(triangle)
     main()
-
-    
+  
 def classify_triangle(a, b, c):
     """ Classifying triangles """
-    if (a == b == c):
+    if (a == b == c) and (a > 0) and (b > 0) and (c > 0):
         return("This is an equilateral triangle.")
+    
+    elif not(isinstance(a,int)) and not(isinstance(b,int)) and not(isinstance(c,int)):
+        return "Please enter a valid numerical digit rounded to the nearest integer."
+
+    elif (a <= 0) or (b <= 0) or (c <= 0):
+        return("A triangle's side may not be less than or equal to 0. Please try again.")
 
     elif (a + b <= c) or (a + c <= b) or (b + c <= a):
         return("This is not a triangle.")
@@ -63,7 +56,10 @@ class classify_triangle_test(unittest.TestCase):
         self.assertEqual(classify_triangle(11.313708498984,11.313708498984,16), "This is a right, isosceles triangle.")
         self.assertEqual(classify_triangle(3, 3, 9), "This is not a triangle.")
         self.assertNotEqual(classify_triangle(3, 3, 3), "This is not a triangle.")
+        self.assertEqual(classify_triangle("a", "b", "c"), "Please enter a valid numerical digit rounded to the nearest integer.")
+        self.assertEqual(classify_triangle(-1, -1, -2), "A triangle's side may not be less than or equal to 0. Please try again.")
+        self.assertEqual(classify_triangle(-1, -1, -1), "A triangle's side may not be less than or equal to 0. Please try again.")
 
 if __name__ == '__main__':
    unittest.main(exit=False, verbosity=2)
-    
+main()
