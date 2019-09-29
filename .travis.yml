@@ -4,8 +4,8 @@ python:
 
 # command to run tests
 script:
- - python -m unittest HW02TestTriangle
  - coverage run -m unittest HW02TestTriangle
+
 install:
  - pip install coverage
  
