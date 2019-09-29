@@ -14,7 +14,6 @@ def main():
 
     triangle = classify_triangle(a, b, c)
     print(triangle)
-    main()
   
 def classify_triangle(a, b, c):
     """ Classifying triangles """
