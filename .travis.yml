@@ -9,5 +9,5 @@ script:
 install:
  - pip install coverage
  
- after_success:
-  - codecov
+after_success:
+ - bash <(curl -s https://codecov.io/bash)
