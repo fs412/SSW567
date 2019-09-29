@@ -6,8 +6,8 @@ python:
 script:
  - python -m unittest HW02TestTriangle
  
- install:
-  - pip install codecov
+install:
+ - pip install coverage
  
  after_success:
   - codecov
